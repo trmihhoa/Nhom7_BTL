@@ -17,7 +17,7 @@ namespace Nhom7_BTL.Controllers
         // GET: Accounts
         public ActionResult Index()
         {
-            if (Session["idUser"] == null)
+            /*if (Session["idUser"] == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -26,7 +26,8 @@ namespace Nhom7_BTL.Controllers
             {
                 return HttpNotFound();
             }
-            return View(account);
+            return View(account);*/
+            return View();
         }
 
         public ActionResult Edit(int? id)
