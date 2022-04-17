@@ -6,7 +6,7 @@
         if (MSG) {
             $.ajax({
                 type: 'POST',
-                url: '/Account/DeleteAccount',
+                url: '/Admin/Account/DeleteAccount',
                 data: { id: id },
                 success: function () {
                     setTimeout(function () { location.reload(); }, 1000);
@@ -25,7 +25,7 @@
         if (MSG) {
             $.ajax({
                 type: 'POST',
-                url: '/Account/EditStatus',
+                url: '/Admin/Account/EditStatus',
                 data: { id: id },
                 success: function () {
                     setTimeout(function () { location.reload(); }, 1000);

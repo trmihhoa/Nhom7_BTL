@@ -40,7 +40,7 @@ namespace Nhom7_BTL.Areas.Admin.Controllers
                 case "name_desc": products = products.OrderByDescending(p => p.Name); break;
                 case "Gia": products = products.OrderBy(p => p.Price); break;
                 case "gia_desc": products = products.OrderByDescending(p => p.Price); break;
-                default: products = products.OrderBy(p => p.Product_Id); break;
+                default: products = products.OrderByDescending(p => p.Product_Id); break;
             }
             int pageSize = 10;
             int pageNumber = (page ?? 1);

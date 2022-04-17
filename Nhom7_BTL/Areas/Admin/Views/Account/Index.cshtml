@@ -1,7 +1,9 @@
-﻿@model IEnumerable<Nhom7_BTL.Models.Account>
+﻿@using Nhom7_BTL.Models
+@model IEnumerable<Nhom7_BTL.Models.Account>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var roleNames = ViewData["RoleName"] as List<Role>;
 
 }
 <div class="pcoded-content">
@@ -56,7 +58,14 @@
                                         string kq = "";
                                         if (item.Roles_Account.Count == 1)
                                         {
-                                            kq = item.Roles_Account.First().Role.Name;
+                                            foreach (var role in roleNames)
+                                            {
+                                                if(role.Role_Id== item.Roles_Account.First().Role_Id)
+                                                {
+                                                    kq = role.Name;
+                                                }
+                                            }
+                                           
                                         }
                                         else
                                         {

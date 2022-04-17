@@ -22,7 +22,9 @@ namespace Nhom7_BTL.Areas.Admin.Controllers
                             a
                         };
             var result = query.ToList();*/
-            var result2 = db.Accounts.ToList();
+            var roles = db.Roles.ToList();
+            ViewData["RoleName"] = roles;
+            var result2 = db.Accounts.Include(x=>x.Roles_Account).ToList();
             return View(result2);
         }
         [HttpPost]

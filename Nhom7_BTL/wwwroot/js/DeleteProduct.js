@@ -6,7 +6,7 @@
         if (MSG) {
             $.ajax({
                 type: 'POST',
-                url: '/Product/DeleteProduct',
+                url: '/Admin/Product/DeleteProduct',
                 data: { id: id },
                 success: function () {
                     setTimeout(function () { location.reload(); }, 1000);

@@ -43,12 +43,12 @@ namespace Nhom7_BTL.Controllers
                 var check = db.Accounts.FirstOrDefault(m => m.Email == account.Email);
                 if (check == null)
                 {
-                    account.Active = false;
+                    account.Active = true;
                     db.Accounts.Add(account);
                     db.SaveChanges();
                     Roles_Account ra = new Roles_Account();
                     ra.Account_Id = account.Account_Id;
-                    ra.Role_Id = 2;
+                    ra.Role_Id = 4;
                     db.Roles_Account.Add(ra);
                     db.SaveChanges();
                     return RedirectToAction("Login");

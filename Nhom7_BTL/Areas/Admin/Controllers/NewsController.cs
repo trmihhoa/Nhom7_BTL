@@ -141,17 +141,20 @@ namespace Nhom7_BTL.Areas.Admin.Controllers
             return View(news);
         }
 
-        // POST: Admin/News/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public JsonResult Delete(int id)
         {
-            News news = db.News.Find(id);
-            db.News.Remove(news);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+            bool result = false;
+            var u = db.News.Where(x => x.id == id).FirstOrDefault();
 
+            if (u != null)
+            {
+                db.News.Remove(u);
+                db.SaveChanges();
+                result = true;
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
