@@ -26,7 +26,7 @@
     $(".deleNews").click(function (e) {
         e.preventDefault();
         var id = $(this).attr("id");
-        var MSG = confirm("Bạn có chắc muốn xóa news này?");
+        var MSG = confirm("Bạn có chắc muốn xóa bài đăng này?");
         if (MSG) {
             $.ajax({
                 type: 'POST',
@@ -36,7 +36,7 @@
                     if (result == true) {
                         setTimeout(function () { location.reload(); }, 1000);
                     } else {
-                        alert("Thể loại này còn chứa sản phẩm không thể xóa!");
+                        alert("Bài đăng này không thể xóa!");
                     }
 
                 },

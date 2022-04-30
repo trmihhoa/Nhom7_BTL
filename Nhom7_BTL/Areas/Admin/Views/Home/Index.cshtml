@@ -16,7 +16,7 @@
                                 <div class="card-block-small">
                                     <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i>
                                     <span class="text-c-blue f-w-600">Danh mục</span>
-                                    <h4>5</h4>
+                                    <h4>@ViewBag.Categories</h4>
                                     <div>
                                         <span class="f-left m-t-10 text-muted">
                                             <i class="text-c-blue f-16 icofont icofont-warning m-r-10"></i>Thêm không gian
@@ -32,7 +32,7 @@
                                 <div class="card-block-small">
                                     <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
                                     <span class="text-c-pink f-w-600">Sản phẩm</span>
-                                    <h4>520</h4>
+                                    <h4>@ViewBag.Products</h4>
                                     <div>
                                         <span class="f-left m-t-10 text-muted">
                                             <i class="text-c-pink f-16 icofont icofont-calendar m-r-10"></i>24 giờ qua
@@ -48,7 +48,7 @@
                                 <div class="card-block-small">
                                     <i class="icofont icofont-warning-alt bg-c-green card1-icon"></i>
                                     <span class="text-c-green f-w-600">Tài khoản</span>
-                                    <h4>45</h4>
+                                    <h4>@ViewBag.Accounts</h4>
                                     <div>
                                         <span class="f-left m-t-10 text-muted">
                                             <i class="text-c-green f-16 icofont icofont-tag m-r-10"></i>Theo dõi qua microsoft
@@ -64,7 +64,7 @@
                                 <div class="card-block-small">
                                     <i class="icofont icofont-social-twitter bg-c-yellow card1-icon"></i>
                                     <span class="text-c-yellow f-w-600">Hóa đơn</span>
-                                    <h4>25</h4>
+                                    <h4>@ViewBag.Orders</h4>
                                     <div>
                                         <span class="f-left m-t-10 text-muted">
                                             <i class="text-c-yellow f-16 icofont icofont-refresh m-r-10"></i>Vừa cập nhật
@@ -74,8 +74,11 @@
                             </div>
                         </div>
                         <!-- card1 end -->
+                    </div>
+                    <div class="row">
+
                         <!-- Statestics Start -->
-                        <div class="col-md-12 col-xl-8">
+                        <div class="col-md-12 col-xl-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h5>Biểu đồ thống kê</h5>
@@ -93,74 +96,6 @@
                                 </div>
                                 <div class="card-block">
                                     <div id="statestics-chart" style="height:517px;"></div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="col-md-12 col-xl-4">
-                            <div class="card fb-card">
-                                <div class="card-header">
-                                    <i class="icofont icofont-social-facebook"></i>
-                                    <div class="d-inline-block">
-                                        <h5>facebook</h5>
-                                        <span>Dong thời gian</span>
-                                    </div>
-                                </div>
-                                <div class="card-block text-center">
-                                    <div class="row">
-                                        <div class="col-6 b-r-default">
-                                            <h2>23</h2>
-                                            <p class="text-muted">Tích cực</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <h2>23</h2>
-                                            <p class="text-muted">Bình luận</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card dribble-card">
-                                <div class="card-header">
-                                    <i class="icofont icofont-social-dribbble"></i>
-                                    <div class="d-inline-block">
-                                        <h5>KPI</h5>
-                                        <span>Phân tích sản phẩm</span>
-                                    </div>
-                                </div>
-                                <div class="card-block text-center">
-                                    <div class="row">
-                                        <div class="col-6 b-r-default">
-                                            <h2>23</h2>
-                                            <p class="text-muted">Trực tiếp</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <h2>23</h2>
-                                            <p class="text-muted">Lời nhắn</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card twitter-card">
-                                <div class="card-header">
-                                    <i class="icofont icofont-social-twitter"></i>
-                                    <div class="d-inline-block">
-                                        <h5>Twitter</h5>
-                                        <span>Dòng thời gian mới hiện tại</span>
-                                    </div>
-                                </div>
-                                <div class="card-block text-center">
-                                    <div class="row">
-                                        <div class="col-6 b-r-default">
-                                            <h2>25</h2>
-                                            <p class="text-muted">New tweet</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <h2>450+</h2>
-                                            <p class="text-muted">Lượt theo dõi</p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

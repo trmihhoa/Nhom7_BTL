@@ -17,7 +17,7 @@ namespace Nhom7_BTL.Controllers
         // GET: Accounts
         public ActionResult Index()
         {
-            /*if (Session["idUser"] == null)
+            if (Session["idUser"] == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -26,8 +26,8 @@ namespace Nhom7_BTL.Controllers
             {
                 return HttpNotFound();
             }
-            return View(account);*/
-            return View();
+            return View(account);
+            //return View();
         }
 
         public ActionResult Edit(int? id)
@@ -51,6 +51,8 @@ namespace Nhom7_BTL.Controllers
             if (ModelState.IsValid)
             {
                 int id = Convert.ToInt32(Session["idUser"]);
+                String passw = Encryptor.MD5Hash(account.Password);
+                account.Password = passw;
                 var check = db.Accounts.Where(s => s.Account_Id != id).FirstOrDefault(m => m.Email == account.Email);
                 if (check == null)
                 {

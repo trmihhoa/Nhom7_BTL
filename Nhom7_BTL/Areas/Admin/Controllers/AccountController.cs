@@ -63,6 +63,8 @@ namespace Nhom7_BTL.Areas.Admin.Controllers
                 ViewBag.RoleID = db.Roles.Select(dm => dm).Distinct();
                 if (ModelState.IsValid)
                 {
+                    string password = account.Password;
+                    account.Password = Encryptor.MD5Hash(password);
                     db.Accounts.Add(account);
                     db.SaveChanges();
                     int tenDM = Convert.ToInt32(Request.Form["tenDM"]);

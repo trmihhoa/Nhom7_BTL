@@ -72,20 +72,6 @@
                                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                     
                                 <div class="alert-danger" style="font-size: small; margin-top: 10px; line-height:50px;">@ViewBag.Error</div>
-                                <div class="row m-t-25 text-left" style="margin-top: 10px;">
-                                    <div class="col-sm-7 col-xs-12">
-                                        <div class="checkbox-fade fade-in-primary">
-                                            <label>
-                                                <input type="checkbox" value="">
-                                                @*<span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>*@
-                                                <span class="text-inverse">Nhớ mật khẩu</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Quên mật khẩu?</a>
-                                    </div>
-                                </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Đăng nhập</button>

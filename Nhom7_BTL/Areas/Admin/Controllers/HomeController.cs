@@ -15,6 +15,10 @@ namespace Nhom7_BTL.Areas.Admin.Controllers
         [FilterAdmin]
         public ActionResult Index()
         {
+            ViewBag.Categories = db.Categories.Count();
+            ViewBag.Products = db.Products.Count();
+            ViewBag.Accounts = db.Accounts.Count();
+            ViewBag.Orders = db.Orders.Count();
             return View();
         }
        public ActionResult Login()
@@ -29,11 +33,12 @@ namespace Nhom7_BTL.Areas.Admin.Controllers
             Account acc = null ;
             if (ModelState.IsValid)
             {
+                String passw = Encryptor.MD5Hash(account.Password);
                 acc =
                 (Account)(from a in db.Accounts
                               //join r in db.Roles_Account on a.Account_Id equals r.Account_Id
                               where(a.Email.Equals(account.Email) &&
-                              a.Password.Equals(account.Password) /*&& r.Role_Id == 1*/)
+                              a.Password.Equals(passw) /*&& r.Role_Id == 1*/)
                               select a).FirstOrDefault();
                 if (acc != null)
                 {
@@ -48,7 +53,7 @@ namespace Nhom7_BTL.Areas.Admin.Controllers
 
                     }
                     return RedirectToAction("Index");
-
+                    ViewBag.error = "Đăng nhập thành công";
                 }
                 else
                 {

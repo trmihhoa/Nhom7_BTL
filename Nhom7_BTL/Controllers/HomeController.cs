@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,7 +20,7 @@ namespace Nhom7_BTL.Controllers
             return View();
         }
         public ActionResult Login()
-        { 
+        {
             return View();
         }
 
@@ -43,6 +44,8 @@ namespace Nhom7_BTL.Controllers
                 var check = db.Accounts.FirstOrDefault(m => m.Email == account.Email);
                 if (check == null)
                 {
+                    String passw = Encryptor.MD5Hash(account.Password);
+                    account.Password = passw;
                     account.Active = true;
                     db.Accounts.Add(account);
                     db.SaveChanges();
@@ -68,16 +71,16 @@ namespace Nhom7_BTL.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                String passw = Encryptor.MD5Hash(acc.Password);
                 var user = db.Accounts.Where(u => u.Email.Equals(acc.Email) &&
-                 u.Password.Equals(acc.Password)).ToList();
+                 u.Password.Equals(passw)).ToList();
                 if (user.Count > 0)
                 {
                     Session["HoTen"] = user.FirstOrDefault().Customer_Name;
                     Session["Email"] = user.FirstOrDefault().Email;
                     Session["idUser"] = user.FirstOrDefault().Account_Id;
                     user.FirstOrDefault().Active = true;
-                    
+
                     db.Entry(user.FirstOrDefault()).State = EntityState.Modified;
                     db.SaveChanges();
                     var url = Session["url-redirect"];

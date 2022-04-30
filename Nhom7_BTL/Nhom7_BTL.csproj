@@ -165,6 +165,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DetailProduct_Order.cs" />
+    <Compile Include="Models\Encryptor.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
